@@ -33,11 +33,26 @@ struct Menu{
     PField fieldArr[MENU_MAX_FIELDS];
     int fieldNoe;
 };
+///Help Function///
+void screen(int Fc, int Bc){
+
+    setWindow(0, 0, MENU_MAX_WIDTH, MENU_MAX_HIGHT, Fc, Bc);
+}
+
+int checkKey(PField _this[], char key, int noe){
+
+    for(int idx = 0; idx < noe; idx++){
+
+        if(key == _this[idx]->sign) return 1;
+    }
+    return 0;
+}
+
 ///MENU//
 
 PMenu Menu_create(int fc, int bc){
 
-    if((fc < 0 || fc > 15) && (bc < 0 || bc > 15)) return;
+    if((fc < 0 || fc > 15) && (bc < 0 || bc > 15)) return NULL;
 
     PMenu retVal = (PMenu) malloc(sizeof(struct Menu));
     retVal->Bc = bc;
@@ -65,6 +80,15 @@ int Menu_getBc(PMenu _this){
     return _this->Bc;
 }
 
+void Menu_addHeader(PMenu _this, char* txt){
+
+    HeaderFooter_setHeader(_this->headerFooter, txt);
+}
+void Menu_addFooter(PMenu _this, char* txt){
+
+    HeaderFooter_setFooter(_this->headerFooter, txt);
+}
+
 void Menu_print(PMenu _this){
 
     const int fc = Menu_getFc(_this);
@@ -73,28 +97,28 @@ void Menu_print(PMenu _this){
     int topY = 3;
     int bottomY = 3;
 
-    if(menu->headerFooter.boolHeader || menu->headerFooter.boolFooter){
-        printHeaderFooter(&menu->headerFooter, fc, bc);
-        if(!menu->headerFooter.boolHeader) topY = 0;
-        if(!menu->headerFooter.boolFooter) bottomY = 0;
+    if(HeaderFooter_isHeader(_this->headerFooter) || HeaderFooter_isFooter(_this->headerFooter)){
+        HeaderFooter_print(_this->headerFooter, fc, bc);
+        if(!HeaderFooter_isHeader(_this->headerFooter)) topY = 0;
+        if(!HeaderFooter_isFooter(_this->headerFooter)) bottomY = 0;
         setWindow(0, topY, MENU_MAX_WIDTH, MENU_MAX_HIGHT - bottomY, fc, bc);
     }else{
         screen(fc, bc);
     }
 
-    printFieldArr(menu->fieldArr, menu->fieldNoe);
+    Field_printArr(_this->fieldArr, _this->fieldNoe);
 
     setColorAndBackground(WHITE, BLACK);
 }
 
-char Menu_input(PMenu menu){
+char Menu_input(PMenu _this){
 
     char user_input;
 
-    if(!menu->fieldNoe) return 'ยบ';
+    if(!_this->fieldNoe) return 'ย';
     do{
         user_input = getch();
-    }while(!checkKey(menu->fieldArr, user_input, menu->fieldNoe));
+    }while(!checkKey(_this->fieldArr, user_input, _this->fieldNoe));
 
     return user_input;
 }
@@ -123,12 +147,12 @@ void HeaderFooter_setFooter(PHeaderFooter _this, char* txt){
 }
 void HeaderFooter_print(PHeaderFooter _this, int fc, int bc){
 
-    if(hf->boolHeader){
+    if(HeaderFooter_isHeader(_this)){
         setWindow(0, 0, MENU_MAX_WIDTH, 2, fc, bc);
         gotoxy(MENU_MAX_WIDTH / 2 - (strlen(_this->headerText) / 2), 1);
         puts(_this->headerText);
     }
-    if(hf->boolFooter){
+    if(HeaderFooter_isFooter(_this)){
         setWindow(0, MENU_MAX_HIGHT - 2, MENU_MAX_WIDTH, MENU_MAX_HIGHT, fc, bc);
         gotoxy(MENU_MAX_WIDTH / 2 - (strlen(_this->footerText) / 2), 28);
         puts(_this->footerText);
@@ -139,7 +163,7 @@ int HeaderFooter_isHeader(PHeaderFooter _this){
     return _this->boolHeader;
 }
 int HeaderFooter_isFooter(PHeaderFooter _this){
-    return _this->booleanFooter;
+    return _this->boolFooter;
 }
 
 ///Field///
@@ -153,36 +177,23 @@ PField Field_create(int fc, int bc, char sign, char* txt){
     return retVal;
 }
 
-void printField(TField* field, int topY, int bottomY){
+void Field_print(PField _this, int topY, int bottomY){
 
-    setWindow(25, topY, 95, bottomY, field->Fc, field->Bc);
+    setWindow(25, topY, 95, bottomY, _this->Fc, _this->Bc);
     gotoxy(46, (topY + bottomY) / 2);
-    printf("Press [%c] %s", field->sign, field->text);
+    printf("Press [%c] %s", _this->sign, _this->text);
 }
-void printFieldArr(TField field[], int noe){
+void Field_printArr(PField _this[], int noe){
 
     int topY = 5, bottomY = 7;
 
     for(int idx = 0; idx < noe; idx++){
 
-        printField(&field[idx], topY, bottomY);
+        Field_print(_this[idx], topY, bottomY);
         topY += 4;
         bottomY += 4;
     }
 }
 
-///Help Function///
-void screen(int Fc, int Bc){
 
-    setWindow(0, 0, MENU_MAX_WIDTH, MENU_MAX_HIGHT, Fc, Bc);
-}
-
-int checkKey(TField field[], char key, int noe){
-
-    for(int idx = 0; idx < noe; idx++){
-
-        if(key == field[idx].sign) return 1;
-    }
-    return 0;
-}
 

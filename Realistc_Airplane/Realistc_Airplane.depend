@@ -248,7 +248,7 @@
 	"Wings.h"
 	"Rudder.h"
 
-1616399688 D
+1616424275 D
 
 1616400481 c:\users\user\documents\github\airplane\realistc_airplane\light.h
 
@@ -395,7 +395,7 @@
 	"Rudder.h"
 	"Luftwiderstand.h"
 
-1616419612 c:\users\strobl\documents\github\airplane\realistc_airplane\airplaneconfig.h
+1616427230 c:\users\strobl\documents\github\airplane\realistc_airplane\airplaneconfig.h
 
 1616252954 c:\users\strobl\documents\github\airplane\realistc_airplane\turbine.h
 
@@ -405,7 +405,7 @@
 
 1616252954 c:\users\strobl\documents\github\airplane\realistc_airplane\rudder.h
 
-1616252954 c:\users\strobl\documents\github\airplane\realistc_airplane\luftwiderstand.h
+1616427230 c:\users\strobl\documents\github\airplane\realistc_airplane\luftwiderstand.h
 	"AirplaneConfig.h"
 	"Turbine.h"
 	"Gears.h"
@@ -414,10 +414,10 @@
 
 1616419612 c:\users\strobl\documents\github\airplane\realistc_airplane\light.h
 
-1616422759 c:\users\strobl\documents\github\airplane\realistc_airplane\input.h
+1616427230 c:\users\strobl\documents\github\airplane\realistc_airplane\input.h
 	"Airplane.h"
 
-1616419612 source:c:\users\strobl\documents\github\airplane\realistc_airplane\airplaneconfig.c
+1616427230 source:c:\users\strobl\documents\github\airplane\realistc_airplane\airplaneconfig.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -439,18 +439,18 @@
 	<stdlib.h>
 	"Gears.h"
 
-1616423744 source:c:\users\strobl\documents\github\airplane\realistc_airplane\input.c
+1616427230 source:c:\users\strobl\documents\github\airplane\realistc_airplane\input.c
 	"Input.h"
 	<stdio.h>
 	<stdlib.h>
 	<conio.h>
 
-1616419612 source:c:\users\strobl\documents\github\airplane\realistc_airplane\luftwiderstand.c
+1616427230 source:c:\users\strobl\documents\github\airplane\realistc_airplane\luftwiderstand.c
 	<stdio.h>
 	<stdlib.h>
 	"Luftwiderstand.h"
 
-1616424437 source:c:\users\strobl\documents\github\airplane\realistc_airplane\main.c
+1616432272 source:c:\users\strobl\documents\github\airplane\realistc_airplane\main.c
 	<stdio.h>
 	<stdlib.h>
 	"Airplane.h"
@@ -472,7 +472,7 @@
 	<stdlib.h>
 	"Rudder.h"
 
-1616252954 source:c:\users\strobl\documents\github\airplane\realistc_airplane\turbine.c
+1616427258 source:c:\users\strobl\documents\github\airplane\realistc_airplane\turbine.c
 	<stdio.h>
 	<stdlib.h>
 	"Turbine.h"
@@ -517,7 +517,7 @@
 
 1616420493 c:\users\strobl\documents\github\airplane\realistc_airplane\gamemanager.h
 
-1616426523 c:\users\strobl\documents\github\airplane\realistc_airplane\menu.h
+1616432765 c:\users\strobl\documents\github\airplane\realistc_airplane\menu.h
 
 1616423744 c:\users\strobl\documents\github\airplane\realistc_airplane\myconio.h
 
@@ -528,16 +528,26 @@
 	<stdlib.h>
 	"RenderEngine.h"
 
-<<<<<<< HEAD
 1616423744 source:c:\users\strobl\documents\github\airplane\realistc_airplane\myconio.c
 	<windows.h>
 	"myconio.h"
-=======
+
+1616423744 "
+
 1616424626 c:\users\kilia\documents\github\airplane\realistc_airplane\renderengine.h
 
 1616424626 source:c:\users\kilia\documents\github\airplane\realistc_airplane\renderengine.c
 	<stdio.h>
 	<stdlib.h>
 	"RenderEngine.h"
->>>>>>> 2811c4d07afc3ca700dddd951b40d4455c666e16
+
+1616424626 1c4d07afc3ca700dddd951b40d4455c666e16
+
+1616432187 source:c:\users\strobl\documents\github\airplane\realistc_airplane\menu.c
+	"menu.h"
+	"myconio.h"
+	<stdlib.h>
+	<stdio.h>
+	<string.h>
+	<conio.h>
 
