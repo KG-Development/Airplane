@@ -1,4 +1,6 @@
 #include "Input.h"
+#include "Airplane.h"
+#include "Light.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <conio.h>
@@ -8,6 +10,12 @@ struct Input {
 
     char addThrottle;
     char subThrottle;
+
+    char taxiLightsSwitch;
+    char navLightsSwitch;
+    char blinkLightsSwitch;
+    char landingLightsSwitch;
+    char cockpitLightSwitch;
 };
 
 PInput Input_createInstance() {
@@ -17,6 +25,11 @@ PInput Input_createInstance() {
         in->choice = '0'; //default value (used for debugging, not really needed)
         in->addThrottle = 'a';
         in->subThrottle = 's';
+        in->taxiLightsSwitch = '1';
+        in->navLightsSwitch = '2';
+        in->blinkLightsSwitch = '3';
+        in->landingLightsSwitch = '4';
+        in->cockpitLightSwitch = '5';
         writeToFile(in);
     }else {
         printf("Error occured while allocation. (Input)\n");
@@ -33,11 +46,27 @@ void Input_UserInput(PInput _this) {
 
 void Input_callFunctionNeeded(PInput _this, PAirplane _that) {
     Input_UserInput(_this);
+    const char* filename = "hotkeys.flightsim";
 
-    if (_this->choice == readFromIndexFile(2, "hotkeys.flightsim")) {
+    if (_this->choice == readFromIndexFile(2, filename)) {
         Airplane_addThrust(_that);
-    }else if (_this->choice == readFromIndexFile(3, "hotkeys.flightsim")) {
+    }else if (_this->choice == readFromIndexFile(3, filename)) {
         Airplane_removeThrust(_that);
+    }else if(_this->choice == readFromIndexFile(4, filename)){
+        Lights_switchTaxiLights(Airplane_getLights(_that));
+
+    }else if(_this->choice == readFromIndexFile(5, filename)){
+        Lights_switchNavLights(Airplane_getLights(_that));
+
+    }else if(_this->choice == readFromIndexFile(6, filename)){
+        Lights_switchBlinkLights(Airplane_getLights(_that));
+
+    }else if(_this->choice == readFromIndexFile(7, filename)){
+        Lights_switchLandinLights(Airplane_getLights(_that));
+
+    }else if(_this->choice == readFromIndexFile(8, filename)){
+        Lights_switchCockpitLights(Airplane_getLights(_that));
+
     }else {
         printf("Error. Or wrong input.(Input)\n");
     }
@@ -63,8 +92,8 @@ void writeToFile(PInput _this) {
     fclose(fp);
 }
 
-char readFromIndexFile(int idx, char *filename) {
-    char ch[3];
+char readFromIndexFile(int idx, const char *filename) {
+    char ch[8];
     FILE *fp = fopen(filename, "rb");
 
     if (fp) {

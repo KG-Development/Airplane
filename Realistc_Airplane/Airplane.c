@@ -85,3 +85,8 @@ void Airplane_Debug_printAllData(PAirplane _this){
 void Airplane_update(PAirplane _this){
     Input_callFunctionNeeded(_this->input, _this);
 }
+
+PLights Airplane_getLights(PAirplane _this){
+
+    return _this->lights;
+}
