@@ -12,12 +12,9 @@
 #include "Luftwiderstand.h"
 
 int main(){
-
     PConfig config = Config_create(42, 4, 1, 3, 2, 1, "A 320 Neo", 35.80, 3.96, 32);
-
     PAirplane airplane = Airplane_create(config);
 
     Airplane_update(airplane);  //calling the update function (later this must be a loop)
-
     Airplane_Debug_printAllData(airplane);
 }

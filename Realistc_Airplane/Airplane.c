@@ -13,7 +13,6 @@
 typedef int boolean;
 
 struct Airplane{
-
     PConfig conf;
 
     PWingArr wingArr;
@@ -31,9 +30,11 @@ struct Airplane{
 float converterKn(float velocity){
     return (velocity / 1.852);
 }
+
 float convertKmh(float velocity){
     return (velocity * 1.852);
 }
+
 PAirplane Airplane_create(PConfig conf){
 
     PAirplane retVal = (PAirplane) malloc(sizeof(struct Airplane));
@@ -56,10 +57,10 @@ void Airplane_addThrust(PAirplane _this){
     if(_this->thrust + Config_getThrustAddValue(_this->conf) >= 100){
         _this->thrust = 100;
         return;
-
     }
     _this->thrust += Config_getThrustAddValue(_this->conf);
 }
+
 void Airplane_removeThrust(PAirplane _this){
     if(_this->thrust - Config_getThrustAddValue(_this->conf) <= 0){
         _this->thrust = 0;
@@ -68,8 +69,8 @@ void Airplane_removeThrust(PAirplane _this){
     }
     _this->thrust -= Config_getThrustAddValue(_this->conf);
 }
-void Airplane_Debug_printAllData(PAirplane _this){
 
+void Airplane_Debug_printAllData(PAirplane _this){
     Config_print(_this->conf);
     Turbine_printArr(_this->turbineArr, Config_getTurbineCount(_this->conf));
     Gears_printArr(_this->gearsArr, Config_getGearsCount(_this->conf));

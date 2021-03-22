@@ -5,7 +5,6 @@
 typedef int boolean;
 
 struct GameManager{
-
     boolean gameRun;
 };
 
