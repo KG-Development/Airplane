@@ -19,7 +19,7 @@ PInput Input_createInstance() {
         in->subThrottle = 's';
     }else {
         printf("Error occured while allocation. (Input)\n");
-        return;
+        return NULL;
     }
     return in;
 }

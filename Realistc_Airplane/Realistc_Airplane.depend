@@ -488,3 +488,19 @@
 
 1616420743 c:\users\kilia\documents\github\airplane\realistc_airplane\gamemanager.h
 
+1616423047 source:c:\users\kilia\documents\github\airplane\realistc_airplane\menu.c
+	"menu.h"
+	"myconio.h"
+	<stdlib.h>
+	<stdio.h>
+	<string.h>
+	<conio.h>
+
+1616423047 c:\users\kilia\documents\github\airplane\realistc_airplane\menu.h
+
+1616423047 c:\users\kilia\documents\github\airplane\realistc_airplane\myconio.h
+
+1616423047 source:c:\users\kilia\documents\github\airplane\realistc_airplane\myconio.c
+	<windows.h>
+	"myconio.h"
+
