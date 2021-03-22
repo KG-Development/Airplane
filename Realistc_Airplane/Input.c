@@ -52,7 +52,7 @@ void Input_callFunctionNeeded(PInput _this, PAirplane _that) {
         Airplane_addThrust(_that);
     }else if (_this->choice == readFromIndexFile(3, filename)) {
         Airplane_removeThrust(_that);
-<<<<<<< HEAD
+
     }else if(_this->choice == readFromIndexFile(4, filename)){
         Lights_switchTaxiLights(Airplane_getLights(_that));
 
@@ -67,9 +67,9 @@ void Input_callFunctionNeeded(PInput _this, PAirplane _that) {
 
     }else if(_this->choice == readFromIndexFile(8, filename)){
         Lights_switchCockpitLights(Airplane_getLights(_that));
-=======
+
     }else if (_this->choice == '0'){
->>>>>>> 1472160c052deed25834475ae14886b922deb9ff
+
 
     }else {
         printf("Error. Or wrong input.(Input) choice: %c\n", _this->choice);
