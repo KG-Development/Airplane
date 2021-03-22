@@ -317,7 +317,7 @@
 	<stdlib.h>
 	"Luftwiderstand.h"
 
-1616424626 source:c:\users\kilia\documents\github\airplane\realistc_airplane\main.c
+1616434151 source:c:\users\kilia\documents\github\airplane\realistc_airplane\main.c
 	<stdio.h>
 	<stdlib.h>
 	"Airplane.h"
@@ -339,7 +339,7 @@
 	<stdlib.h>
 	"Rudder.h"
 
-1616252840 source:c:\users\kilia\documents\github\airplane\realistc_airplane\turbine.c
+1616427229 source:c:\users\kilia\documents\github\airplane\realistc_airplane\turbine.c
 	<stdio.h>
 	<stdlib.h>
 	"Turbine.h"
@@ -352,7 +352,7 @@
 1616425602 c:\users\kilia\documents\github\airplane\realistc_airplane\input.h
 	"Airplane.h"
 
-1616425770 source:c:\users\kilia\documents\github\airplane\realistc_airplane\input.c
+1616434079 source:c:\users\kilia\documents\github\airplane\realistc_airplane\input.c
 	"Input.h"
 	<stdio.h>
 	<stdlib.h>
@@ -494,7 +494,7 @@
 
 1616420743 c:\users\kilia\documents\github\airplane\realistc_airplane\gamemanager.h
 
-1616423047 source:c:\users\kilia\documents\github\airplane\realistc_airplane\menu.c
+1616433616 source:c:\users\kilia\documents\github\airplane\realistc_airplane\menu.c
 	"menu.h"
 	"myconio.h"
 	<stdlib.h>
@@ -502,7 +502,7 @@
 	<string.h>
 	<conio.h>
 
-1616424101 c:\users\kilia\documents\github\airplane\realistc_airplane\menu.h
+1616433574 c:\users\kilia\documents\github\airplane\realistc_airplane\menu.h
 
 1616423047 c:\users\kilia\documents\github\airplane\realistc_airplane\myconio.h
 

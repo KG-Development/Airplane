@@ -25,6 +25,8 @@ int main(){
     Menu_print(menu);
     Menu_input(menu);
 
+    system("cls");  //temp until new sol has been found
+
     Airplane_update(airplane);  //calling the update function (later this must be a loop)
     Airplane_Debug_printAllData(airplane);
 

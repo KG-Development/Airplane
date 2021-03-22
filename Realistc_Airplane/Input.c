@@ -38,8 +38,10 @@ void Input_callFunctionNeeded(PInput _this, PAirplane _that) {
         Airplane_addThrust(_that);
     }else if (_this->choice == readFromIndexFile(3, "hotkeys.flightsim")) {
         Airplane_removeThrust(_that);
+    }else if (_this->choice == '0'){
+
     }else {
-        printf("Error. Or wrong input.(Input)\n");
+        printf("Error. Or wrong input.(Input) choice: %c\n", _this->choice);
     }
 }
 
