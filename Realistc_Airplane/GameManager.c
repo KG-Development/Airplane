@@ -25,3 +25,9 @@ boolean GameManager_getGameRun(PGameManager _this){
 
     return _this->gameRun;
 }
+void GameManager_setGameRun(PGameManager _this, boolean state){
+
+    if(state < 0 ||state > 1) return;
+
+    _this->gameRun = state;
+}
