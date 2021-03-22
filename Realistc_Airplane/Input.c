@@ -6,6 +6,8 @@
 #include <stdlib.h>
 #include <conio.h>
 
+#define NUM_OF_HOTKEYS 9
+
 struct Input {
     char choice;
 
@@ -102,7 +104,7 @@ void writeToFile(PInput _this) {
 }
 
 char readFromIndexFile(int idx, const char *filename) {
-    char ch[9];
+    char ch[NUM_OF_HOTKEYS];
     FILE *fp = fopen(filename, "rb");
 
     if (fp) {
