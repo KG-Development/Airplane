@@ -1,3 +1,5 @@
+#pragma once
+
 #ifndef MENU_H_INCLUDED
 #define MENU_H_INCLUDED
 
@@ -7,8 +9,8 @@
 #define MENU_MAX_FIELDS 5
 #define MENU_TRUE 1
 #define MENU_FALSE 0
-typedef struct{
 
+typedef struct{
     int Fc;
     int Bc;
     char text[MENU_MAX_STRING];
@@ -16,15 +18,13 @@ typedef struct{
 }TField;
 
 typedef struct{
-
     char headerText[MENU_MAX_STRING];
     int boolHeader;
     char footerText[MENU_MAX_STRING];
     int boolFooter;
-
 }THeaderFooter;
-typedef struct{
 
+typedef struct{
     int Fc;
     int Bc;
     THeaderFooter headerFooter;
