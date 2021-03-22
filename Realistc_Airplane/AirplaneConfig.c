@@ -98,6 +98,6 @@ int Config_getHullDiameter(PConfig _this){
     return _this->hullDiameter;
 }
 
-int Config_getCWValue(PConfig _this){
+float Config_getCWValue(PConfig _this){
     return _this->cw;
 }
