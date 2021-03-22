@@ -10,4 +10,7 @@ void Input_UserInput(PInput _this);
 void Input_callFunctionNeeded(PInput _this, PAirplane _that);
 char Input_getter(PInput _this);
 
+void writeToFile(PInput _this);
+char readFromIndexFile(int idx, char *filename);
+
 void Input_print(PInput _this);
