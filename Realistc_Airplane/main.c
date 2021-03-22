@@ -12,6 +12,7 @@
 #include "Luftwiderstand.h"
 #include "Menu.h"
 #include "myconio.h"
+#include "RenderEngine.h"
 
 int main(){
     PConfig config = Config_create(42, 4, 1, 3, 2, 1, "A 320 Neo", 35.80, 3.96, 32);
@@ -20,4 +21,9 @@ int main(){
 
     Airplane_update(airplane);  //calling the update function (later this must be a loop)
     Airplane_Debug_printAllData(airplane);
+
+    printf("\n\n");
+    PRenderEngine render = RenderEngine_create();
+    RenderEngine_readFile(render, ".\\drawing\\draw1.txt");
+    RenderEngine_print(render);
 }
