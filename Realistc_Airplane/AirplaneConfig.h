@@ -14,4 +14,4 @@ int Config_getTurbineCount(PConfig _this);
 int Config_getRudderCount(PConfig _this);
 int Config_getSpan(PConfig _this);
 int Config_getHullDiameter(PConfig _this);
-int Config_getCWValue(PConfig _this);
+float Config_getCWValue(PConfig _this);

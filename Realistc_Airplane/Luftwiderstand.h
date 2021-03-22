@@ -9,6 +9,6 @@
 typedef struct Luftwiderstand *PLuftwiderstand;
 
 PLuftwiderstand Luftwiderstand_berechneKraft(float cw);
-int Luftwiderstand_set(PLuftwiderstand _this);
+void Luftwiderstand_set(PLuftwiderstand _this);
 
 void Luftwiderstand_print(PLuftwiderstand _this);

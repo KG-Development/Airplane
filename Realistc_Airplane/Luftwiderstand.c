@@ -17,12 +17,10 @@ struct Luftwiderstand {
     float kraft;
 };
 
-int Luftwiderstand_set(PLuftwiderstand _this) {
+void Luftwiderstand_set(PLuftwiderstand _this) {
     _this->gl = 1.2041;
     _this->A = 35.8;
-    _this->v2RL = 12 * 12;
-
-    return 1;
+    _this->v2RL = 15 * 15;
 }
 
 PLuftwiderstand Luftwiderstand_berechneKraft(float cw) {

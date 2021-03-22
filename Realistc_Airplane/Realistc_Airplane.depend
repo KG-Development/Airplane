@@ -273,7 +273,7 @@
 	"Rudder.h"
 	"Luftwiderstand.h"
 
-1616399748 c:\users\kilia\documents\github\airplane\realistc_airplane\airplaneconfig.h
+1616426482 c:\users\kilia\documents\github\airplane\realistc_airplane\airplaneconfig.h
 
 1616252840 c:\users\kilia\documents\github\airplane\realistc_airplane\turbine.h
 
@@ -283,14 +283,14 @@
 
 1616252840 c:\users\kilia\documents\github\airplane\realistc_airplane\rudder.h
 
-1616252840 c:\users\kilia\documents\github\airplane\realistc_airplane\luftwiderstand.h
+1616426051 c:\users\kilia\documents\github\airplane\realistc_airplane\luftwiderstand.h
 	"AirplaneConfig.h"
 	"Turbine.h"
 	"Gears.h"
 	"Wings.h"
 	"Rudder.h"
 
-1616405146 source:c:\users\kilia\documents\github\airplane\realistc_airplane\airplaneconfig.c
+1616426474 source:c:\users\kilia\documents\github\airplane\realistc_airplane\airplaneconfig.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -312,7 +312,7 @@
 	<stdlib.h>
 	"Gears.h"
 
-1616399748 source:c:\users\kilia\documents\github\airplane\realistc_airplane\luftwiderstand.c
+1616426540 source:c:\users\kilia\documents\github\airplane\realistc_airplane\luftwiderstand.c
 	<stdio.h>
 	<stdlib.h>
 	"Luftwiderstand.h"
@@ -352,7 +352,7 @@
 1616425602 c:\users\kilia\documents\github\airplane\realistc_airplane\input.h
 	"Airplane.h"
 
-1616425311 source:c:\users\kilia\documents\github\airplane\realistc_airplane\input.c
+1616425770 source:c:\users\kilia\documents\github\airplane\realistc_airplane\input.c
 	"Input.h"
 	<stdio.h>
 	<stdlib.h>
