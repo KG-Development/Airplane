@@ -41,6 +41,7 @@ void RenderEngine_setNull(PRenderEngine _this) {
 }
 
 void RenderEngine_print(PRenderEngine _this) {
+    gotoxy(0, 0);
     for(int y = 0; y < MAX_Y; y++) {
         for(int x = 0; x < MAX_X; x++) {
             putchar(_this->field[y][x]);

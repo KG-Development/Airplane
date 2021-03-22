@@ -15,6 +15,9 @@
 #include "RenderEngine.h"
 
 int main() {
+
+
+
     PConfig config = Config_create(42, 4, 1, 3, 2, 1, "A 320 Neo", 35.80, 3.96, 32);
     PAirplane airplane = Airplane_create(config);
     PMenu menu = Menu_create(GREEN, BLACK);
@@ -33,8 +36,8 @@ int main() {
 
     Airplane_Debug_printAllData(airplane);
 
-    printf("\n\n");
-    PRenderEngine render = RenderEngine_create();
-    RenderEngine_readFile(render, ".\\drawing\\draw1.txt");
-    RenderEngine_print(render);
+    system("cls");
+    PRenderEngine ui = RenderEngine_create();
+    RenderEngine_readFile(ui, ".\\drawing\\draw1.txt");
+    RenderEngine_print(ui);
 }

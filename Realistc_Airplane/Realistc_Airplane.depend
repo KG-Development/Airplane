@@ -368,7 +368,7 @@
 	<stdio.h>
 	"Light.h"
 
-1616436537 source:c:\users\strobl\documents\github\airplane\realistc_airplane\airplane.c
+1616436587 source:c:\users\strobl\documents\github\airplane\realistc_airplane\airplane.c
 	<stdio.h>
 	<stdlib.h>
 	"Airplane.h"
@@ -440,7 +440,7 @@
 	<stdlib.h>
 	"Luftwiderstand.h"
 
-1616435509 source:c:\users\strobl\documents\github\airplane\realistc_airplane\main.c
+1616440409 source:c:\users\strobl\documents\github\airplane\realistc_airplane\main.c
 	<stdio.h>
 	<stdlib.h>
 	"Airplane.h"
@@ -513,7 +513,7 @@
 
 1616423771 c:\users\strobl\documents\github\airplane\realistc_airplane\renderengine.h
 
-1616435392 source:c:\users\strobl\documents\github\airplane\realistc_airplane\renderengine.c
+1616438641 source:c:\users\strobl\documents\github\airplane\realistc_airplane\renderengine.c
 	<stdio.h>
 	<stdlib.h>
 	"RenderEngine.h"
