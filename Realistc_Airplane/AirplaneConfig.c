@@ -101,3 +101,13 @@ int Config_getHullDiameter(PConfig _this){
 float Config_getCWValue(PConfig _this){
     return _this->cw;
 }
+
+void Config_switchGears(PConfig _this){
+
+    switch(_this->gearsUp){
+    case 1: _this->gearsUp = 0;
+        break;
+    case 0: _this->gearsUp = 1;
+        break;
+    }
+}

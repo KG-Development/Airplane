@@ -1,6 +1,7 @@
 #include "Input.h"
 #include "Airplane.h"
 #include "Light.h"
+#include "AirplaneConfig.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <conio.h>
@@ -16,6 +17,7 @@ struct Input {
     char blinkLightsSwitch;
     char landingLightsSwitch;
     char cockpitLightSwitch;
+    char gears;
 };
 
 PInput Input_createInstance() {
@@ -30,6 +32,7 @@ PInput Input_createInstance() {
         in->blinkLightsSwitch = '3';
         in->landingLightsSwitch = '4';
         in->cockpitLightSwitch = '5';
+        in->gears = 'g';
         writeToFile(in);
     }else {
         printf("Error occured while allocation. (Input)\n");
@@ -68,6 +71,8 @@ void Input_callFunctionNeeded(PInput _this, PAirplane _that) {
     }else if(_this->choice == readFromIndexFile(8, filename)){
         Lights_switchCockpitLights(Airplane_getLights(_that));
 
+    }else if (_this->choice == readFromIndexFile(9, filename)){
+        Config_switchGears(Airplane_getConfig(_that));
     }else if (_this->choice == '0'){
 
 
@@ -97,7 +102,7 @@ void writeToFile(PInput _this) {
 }
 
 char readFromIndexFile(int idx, const char *filename) {
-    char ch[8];
+    char ch[9];
     FILE *fp = fopen(filename, "rb");
 
     if (fp) {
