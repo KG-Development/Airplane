@@ -476,3 +476,8 @@
 	<stdlib.h>
 	"Wings.h"
 
+1616419612 source:c:\users\strobl\documents\github\airplane\realistc_airplane\light.c
+	<stdlib.h>
+	<stdio.h>
+	"Light.h"
+
