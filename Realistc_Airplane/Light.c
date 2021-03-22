@@ -35,6 +35,6 @@ void Lights_print(PLights _this){
     printf("   BlinkLights: %d\n", _this->blinkLights);
     printf("   LandingLights: %d\n", _this->landingLights);
     printf("   CockpitLights: %d\n", _this->cockpitLight);
-    printf("   PowerCockpitLink: %d\n", _this->powerCockpitLight);
+    printf("   PowerCockpitLight: %d\n", _this->powerCockpitLight);
     printf("}\n");
 }
