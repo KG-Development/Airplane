@@ -1,11 +1,5 @@
 #pragma once
 
-#include "AirplaneConfig.h"
-#include "Turbine.h"
-#include "Gears.h"
-#include "Wings.h"
-#include "Rudder.h"
-#include "Luftwiderstand.h"
 
 typedef struct Airplane* PAirplane;
 

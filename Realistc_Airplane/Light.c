@@ -4,7 +4,7 @@
 
 typedef int boolean;
 
-struct Lights{
+struct Lights {
 
     boolean taxiLights;
     boolean navLights;
@@ -14,7 +14,7 @@ struct Lights{
     int powerCockpitLight;
 };
 
-PLights Lights_create(){
+PLights Lights_create() {
 
     PLights retVal = (PLights) malloc(sizeof(struct Lights));
 
@@ -27,7 +27,7 @@ PLights Lights_create(){
     return retVal;
 }
 
-void Lights_print(PLights _this){
+void Lights_print(PLights _this) {
 
     printf("Lights {\n");
     printf("   TaxiLights: %d\n", _this->taxiLights);

@@ -14,7 +14,7 @@
 #include "myconio.h"
 #include "RenderEngine.h"
 
-int main(){
+int main() {
     PConfig config = Config_create(42, 4, 1, 3, 2, 1, "A 320 Neo", 35.80, 3.96, 32);
     PAirplane airplane = Airplane_create(config);
     PMenu menu = Menu_create(GREEN, BLACK);
