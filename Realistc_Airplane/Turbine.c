@@ -2,14 +2,29 @@
 #include <stdlib.h>
 #include "Turbine.h"
 
+/*
+S = m1(c9 - c0)
+S  = Schub in Newton
+M1 = Luftmassestrom in kg/s
+C9 = Gasaustrittsgeschwindigkeit in m/s
+C0 = Fluggeschwindigkeit in m/s
+
+nv = 2C0 / c0 + c9
+nv = Vortriebswirkungsgrad
+*/
+
 typedef int boolean;
 
 struct Turbine{
-
     float rpm;
     float damage;
     boolean fire;
 
+    float thrust;
+    float airMassFlow;
+    float gasOutletVelocity;
+    float velocity;
+    float advanceEfficiency
 };
 
 PTurbine Turbine_create(){
