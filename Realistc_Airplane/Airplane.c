@@ -7,6 +7,8 @@
 #include "Wings.h"
 #include "Rudder.h"
 #include "Luftwiderstand.h"
+#include "Light.h"
+#include "Input.h"
 
 typedef int boolean;
 
@@ -19,13 +21,14 @@ struct Airplane{
     PTurbineArr turbineArr;
     PGearsArr gearsArr;
     PLuftwiderstand widerstand;
+    PLights lights;
+    PInput input;
 
     float velocity; //KN
     float thrust;
 };
 
 float converterKn(float velocity){
-
     return (velocity / 1.852);
 }
 float convertKmh(float velocity){
@@ -41,8 +44,10 @@ PAirplane Airplane_create(PConfig conf){
     retVal->wingArr = Wings_createArr(Config_getWingsCount(retVal->conf));
     retVal->rudderArr = Rudder_createArr(Config_getRudderCount(retVal->conf));
     retVal->widerstand = Luftwiderstand_berechneKraft(Config_getCWValue(retVal->conf));
+    retVal->lights = Lights_create();
     retVal->thrust = 0;
     retVal->velocity = 0;
+    retVal->input = Input_createInstance();
 
     return retVal;
 }
@@ -62,7 +67,6 @@ void Airplane_removeThrust(PAirplane _this){
 
     }
     _this->thrust -= Config_getThrustAddValue(_this->conf);
-
 }
 void Airplane_Debug_printAllData(PAirplane _this){
 
@@ -71,11 +75,12 @@ void Airplane_Debug_printAllData(PAirplane _this){
     Gears_printArr(_this->gearsArr, Config_getGearsCount(_this->conf));
     Wings_printArr(_this->wingArr, Config_getWingsCount(_this->conf));
     Rudder_printArr(_this->rudderArr, Config_getRudderCount(_this->conf));
+    Lights_print(_this->lights);
     Luftwiderstand_print(_this->widerstand);
+    Input_print(_this->input);
     printf("Thrust: %.2f\n", _this->thrust);
 }
 
 void Airplane_update(PAirplane _this){
-
-
+    Input_callFunctionNeeded(_this->input, _this);
 }

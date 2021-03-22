@@ -21,6 +21,8 @@ int Luftwiderstand_set(PLuftwiderstand _this) {
     _this->gl = 1.2041;
     _this->A = 35.8;
     _this->v2RL = 12 * 12;
+
+    return 1;
 }
 
 PLuftwiderstand Luftwiderstand_berechneKraft(float cw) {
