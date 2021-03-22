@@ -317,7 +317,7 @@
 	<stdlib.h>
 	"Luftwiderstand.h"
 
-1616421975 source:c:\users\kilia\documents\github\airplane\realistc_airplane\main.c
+1616423358 source:c:\users\kilia\documents\github\airplane\realistc_airplane\main.c
 	<stdio.h>
 	<stdlib.h>
 	"Airplane.h"
@@ -330,6 +330,8 @@
 	"Light.h"
 	"Fuel.h"
 	"Luftwiderstand.h"
+	"Menu.h"
+	"myconio.h"
 
 1616252840 source:c:\users\kilia\documents\github\airplane\realistc_airplane\rudder.c
 	<stdio.h>
@@ -349,7 +351,7 @@
 1616422612 c:\users\kilia\documents\github\airplane\realistc_airplane\input.h
 	"Airplane.h"
 
-1616422728 source:c:\users\kilia\documents\github\airplane\realistc_airplane\input.c
+1616423358 source:c:\users\kilia\documents\github\airplane\realistc_airplane\input.c
 	"Input.h"
 	<stdio.h>
 	<stdlib.h>

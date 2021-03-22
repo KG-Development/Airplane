@@ -43,6 +43,10 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="Fuel.h" />
+		<Unit filename="GameManager.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="GameManager.h" />
 		<Unit filename="Gears.c">
 			<Option compilerVar="CC" />
 		</Unit>
@@ -51,6 +55,10 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="Input.h" />
+		<Unit filename="Light.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="Light.h" />
 		<Unit filename="Luftwiderstand.c">
 			<Option compilerVar="CC" />
 		</Unit>
@@ -70,6 +78,14 @@
 		<Unit filename="main.c">
 			<Option compilerVar="CC" />
 		</Unit>
+		<Unit filename="menu.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="menu.h" />
+		<Unit filename="myconio.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="myconio.h" />
 		<Extensions>
 			<code_completion />
 			<envvars />
