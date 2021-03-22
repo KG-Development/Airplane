@@ -12,7 +12,7 @@
 
 typedef int boolean;
 
-struct Airplane{
+struct Airplane {
     PConfig conf;
 
     PWingArr wingArr;
@@ -27,15 +27,15 @@ struct Airplane{
     float thrust;
 };
 
-float converterKn(float velocity){
+float converterKn(float velocity) {
     return (velocity / 1.852);
 }
 
-float convertKmh(float velocity){
+float convertKmh(float velocity) {
     return (velocity * 1.852);
 }
 
-PAirplane Airplane_create(PConfig conf){
+PAirplane Airplane_create(PConfig conf) {
 
     PAirplane retVal = (PAirplane) malloc(sizeof(struct Airplane));
 
@@ -53,15 +53,15 @@ PAirplane Airplane_create(PConfig conf){
     return retVal;
 }
 
-void Airplane_addThrust(PAirplane _this){
-    if(_this->thrust + Config_getThrustAddValue(_this->conf) >= 100){
+void Airplane_addThrust(PAirplane _this) {
+    if(_this->thrust + Config_getThrustAddValue(_this->conf) >= 100) {
         _this->thrust = 100;
         return;
     }
     _this->thrust += Config_getThrustAddValue(_this->conf);
 }
 
-void Airplane_removeThrust(PAirplane _this){
+void Airplane_removeThrust(PAirplane _this) {
     if(_this->thrust - Config_getThrustAddValue(_this->conf) <= 0){
         _this->thrust = 0;
         return;
@@ -70,7 +70,7 @@ void Airplane_removeThrust(PAirplane _this){
     _this->thrust -= Config_getThrustAddValue(_this->conf);
 }
 
-void Airplane_Debug_printAllData(PAirplane _this){
+void Airplane_Debug_printAllData(PAirplane _this) {
     Config_print(_this->conf);
     Turbine_printArr(_this->turbineArr, Config_getTurbineCount(_this->conf));
     Gears_printArr(_this->gearsArr, Config_getGearsCount(_this->conf));
@@ -82,7 +82,7 @@ void Airplane_Debug_printAllData(PAirplane _this){
     printf("Thrust: %.2f\n", _this->thrust);
 }
 
-void Airplane_update(PAirplane _this){
+void Airplane_update(PAirplane _this) {
     Input_callFunctionNeeded(_this->input, _this);
 }
 

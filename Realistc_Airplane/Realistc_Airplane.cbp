@@ -82,6 +82,14 @@
 		<Unit filename="main.c">
 			<Option compilerVar="CC" />
 		</Unit>
+		<Unit filename="menu.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="menu.h" />
+		<Unit filename="myconio.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="myconio.h" />
 		<Extensions>
 			<code_completion />
 			<envvars />

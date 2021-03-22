@@ -1,5 +1,9 @@
 #pragma once
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 1472160c052deed25834475ae14886b922deb9ff
 typedef struct Airplane* PAirplane;
 typedef struct Lights* PLights;
 PAirplane Airplane_create();
