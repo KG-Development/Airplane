@@ -1,48 +1,36 @@
 #pragma once
 
-#ifndef MENU_H_INCLUDED
-#define MENU_H_INCLUDED
-
-#define MENU_MAX_WIDTH 119
-#define MENU_MAX_HIGHT 29
-#define MENU_MAX_STRING 31
-#define MENU_MAX_FIELDS 5
-#define MENU_TRUE 1
-#define MENU_FALSE 0
-
-typedef struct{
-    int Fc;
-    int Bc;
-    char text[MENU_MAX_STRING];
-    char sign;
-}TField;
-
-typedef struct{
-    char headerText[MENU_MAX_STRING];
-    int boolHeader;
-    char footerText[MENU_MAX_STRING];
-    int boolFooter;
-}THeaderFooter;
-
-typedef struct{
-    int Fc;
-    int Bc;
-    THeaderFooter headerFooter;
-    TField fieldArr[MENU_MAX_FIELDS];
-    int fieldNoe;
-}TMenu;
+typedef struct Field* PField;
+typedef struct HeaderFooter* PHeaderFooter;
+typedef struct Menu* PMenu;
 
 void screen(int Fc, int Bc);
-void addField(TMenu *menu, int fc, int bc, char sign, char* txt);
 
-void printMenu(TMenu* menu);
-void printField(TField* field, int topY, int bottomY);
-void printFieldArr(TField field[], int noe);
-void printHeaderFooter(THeaderFooter* hf, int fc, int bc);
+///MENU///
 
-void setHeader(THeaderFooter* header , char* txt);
-void setFooter(THeaderFooter* footer , char* txt);
+PMenu Menu_create(int fc, int bc);
 
-char inputMenu(TMenu* menu);
-int checkKey(TField field[], char key, int noe);
-#endif // MENU_H_INCLUDED
+void Menu_addField(PMenu _this, int fc, int bc, char sign, char* txt);
+void Menu_print(PMenu _this);
+
+int Menu_getFc(PMenu _this);
+int Menu_getBc(PMenu _this);
+
+char Menu_input(PMenu _this);
+///Header Footer///
+
+PHeaderFooter HeaderFooter_create();
+
+void HeaderFooter_print(PHeaderFooter _this, int fc, int bc);
+
+void HeaderFooter_setHeader(PHeaderFooter _this, char* txt);
+void HeaderFooter_setFooter(PHeaderFooter _this, char* txt);
+
+int HeaderFooter_isHeader(PHeaderFooter _this);
+int HeaderFooter_isFooter(PHeaderFooter _this);
+///Field///
+
+PField Field_create(int fc, int bc, char sign, char* txt);
+
+void printField(PField field, int topY, int bottomY);
+void printFieldArr(PField field[], int noe);
