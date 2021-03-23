@@ -14,3 +14,5 @@ PLuftwiderstand Luftwiderstand_berechneKraft(float cw);
 void Luftwiderstand_set(PLuftwiderstand _this);
 
 void Luftwiderstand_print(PLuftwiderstand _this);
+float AirResuspension_getAirtight(PLuftwiderstand _this);
+float AirResuspension_getAirvelocity(PLuftwiderstand _this);

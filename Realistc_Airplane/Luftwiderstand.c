@@ -36,3 +36,11 @@ void Luftwiderstand_print(PLuftwiderstand _this) {
     printf("   Kraft: %.2f\n", _this->kraft);
     printf("}\n");
 }
+
+float AirResuspension_getAirtight(PLuftwiderstand _this){
+
+    return _this->gl;
+}
+float AirResuspension_getAirvelocity(PLuftwiderstand _this){
+    return _this->v2RL;
+}
