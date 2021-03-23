@@ -28,10 +28,10 @@ struct Config { //basic configuration of the current airplane, can be modified a
     int gearsCount;
     int turbineCount;
 
-    int thrustAddValue;
+    float throttleAddValue;
 };
 
-PConfig Config_create(float weight, int wingsCount, int rudderCount, int gearsCount, int turbineCount, int thrustAddVlue, char* callSign, float span, float hullDiameter, float length){
+PConfig Config_create(float weight, int wingsCount, int rudderCount, int gearsCount, int turbineCount, float throttleAddVlue, char* callSign, float span, float hullDiameter, float length){
 
     PConfig retVal = (PConfig) malloc(sizeof(struct Config));
 
@@ -43,7 +43,7 @@ PConfig Config_create(float weight, int wingsCount, int rudderCount, int gearsCo
     retVal->gearsCount = gearsCount;
     retVal->gearsUp = 0;
     retVal->rudderCount = rudderCount;
-    retVal->thrustAddValue = thrustAddVlue;
+    retVal->throttleAddValue = throttleAddVlue;
     retVal->turbineCount = turbineCount;
     retVal->weight = weight;
     retVal->wingsCount = wingsCount;
@@ -58,7 +58,7 @@ void Config_print(PConfig _this){
     printf("   RudderCount: %d\n", _this->rudderCount);
     printf("   GearsCount: %d\n", _this->gearsCount);
     printf("   TurbineCount: %d\n", _this->turbineCount);
-    printf("   ThrustAddValue: %d\n", _this->thrustAddValue);
+    printf("   ThrottleAddValue: %.1f\n", _this->throttleAddValue);
     printf("   HullDiameter: %.2f\n", _this->hullDiameter);
     printf("   Length: %.2f\n", _this->length);
     printf("   Span: %.2f\n", _this->span);
@@ -66,12 +66,12 @@ void Config_print(PConfig _this){
     printf("}\n");
 }
 
-int Config_getThrustAddValue(PConfig _this){
-    return _this->thrustAddValue;
+float Config_getThrottleAddValue(PConfig _this){
+    return _this->throttleAddValue;
 }
 
-void Config_setThrustAddValue(PConfig _this, int value){
-    _this->thrustAddValue = value;
+void Config_setThrottletAddValue(PConfig _this, int value){
+    _this->throttleAddValue = value;
 }
 
 int Config_getWingsCount(PConfig _this){

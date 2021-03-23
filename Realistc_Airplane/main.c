@@ -15,10 +15,7 @@
 #include "RenderEngine.h"
 
 int main() {
-
-
-
-    PConfig config = Config_create(42, 4, 1, 3, 2, 1, "A 320 Neo", 35.80, 3.96, 32);
+    PConfig config = Config_create(75.5, 2, 1, 3, 2, 1, "A320 Neo", 34.10, 3.96, 37.57);
     PAirplane airplane = Airplane_create(config);
     PMenu menu = Menu_create(GREEN, BLACK);
 
@@ -35,9 +32,9 @@ int main() {
     Airplane_update(airplane);  //calling the update function (later this must be a loop)
 
     Airplane_Debug_printAllData(airplane);
-
+    /*
     system("cls");
     PRenderEngine ui = RenderEngine_create();
     RenderEngine_readFile(ui, ".\\drawing\\draw1.txt");
-    RenderEngine_print(ui);
+    RenderEngine_print(ui);*/
 }

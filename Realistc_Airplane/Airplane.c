@@ -24,7 +24,7 @@ struct Airplane {
     PInput input;
 
     float velocity; //KN
-    float thrust;
+    float throttle;
 };
 
 float converterKn(float velocity) {
@@ -46,28 +46,28 @@ PAirplane Airplane_create(PConfig conf) {
     retVal->rudderArr = Rudder_createArr(Config_getRudderCount(retVal->conf));
     retVal->widerstand = Luftwiderstand_berechneKraft(Config_getCWValue(retVal->conf));
     retVal->lights = Lights_create();
-    retVal->thrust = 0;
+    retVal->throttle = 1;
     retVal->velocity = 0;
     retVal->input = Input_createInstance();
 
     return retVal;
 }
 
-void Airplane_addThrust(PAirplane _this) {
-    if(_this->thrust + Config_getThrustAddValue(_this->conf) >= 100) {
-        _this->thrust = 100;
+void Airplane_addThrottle(PAirplane _this) {
+    if(_this->throttle + Config_getThrottleAddValue(_this->conf) >= 100) {
+        _this->throttle = 100;
         return;
     }
-    _this->thrust += Config_getThrustAddValue(_this->conf);
+    _this->throttle += Config_getThrottleAddValue(_this->conf);
 }
 
-void Airplane_removeThrust(PAirplane _this) {
-    if(_this->thrust - Config_getThrustAddValue(_this->conf) <= 0){
-        _this->thrust = 0;
+void Airplane_removeThrottle(PAirplane _this) {
+    if(_this->throttle - Config_getThrottleAddValue(_this->conf) <= 0){
+        _this->throttle = 0;
         return;
 
     }
-    _this->thrust -= Config_getThrustAddValue(_this->conf);
+    _this->throttle -= Config_getThrottleAddValue(_this->conf);
 }
 
 void Airplane_Debug_printAllData(PAirplane _this) {
@@ -79,18 +79,21 @@ void Airplane_Debug_printAllData(PAirplane _this) {
     Lights_print(_this->lights);
     Luftwiderstand_print(_this->widerstand);
     Input_print(_this->input);
-    printf("Thrust: %.2f\n", _this->thrust);
+    printf("Throttle: %.2f%\n", _this->throttle);
 }
 
 void Airplane_update(PAirplane _this) {
-
-        Input_callFunctionNeeded(_this->input, _this);
+    Input_callFunctionNeeded(_this->input, _this);
+    Turbine_calcValuesArr(_this->turbineArr, _this, Config_getTurbineCount(_this->conf));
 }
 
 PLights Airplane_getLights(PAirplane _this){
-
     return _this->lights;
 }
 PConfig Airplane_getConfig(PAirplane _this){
     return _this->conf;
+}
+
+float Airplane_getThrottle(PAirplane _this) {
+    return (_this->throttle);
 }

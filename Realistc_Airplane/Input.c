@@ -54,9 +54,9 @@ void Input_callFunctionNeeded(PInput _this, PAirplane _that) {
     const char* filename = "hotkeys.flightsim";
 
     if (_this->choice == readFromIndexFile(2, filename)) {
-        Airplane_addThrust(_that);
+        Airplane_addThrottle(_that);
     }else if (_this->choice == readFromIndexFile(3, filename)) {
-        Airplane_removeThrust(_that);
+        Airplane_removeThrottle(_that);
 
     }else if(_this->choice == readFromIndexFile(4, filename)){
         Lights_switchTaxiLights(Airplane_getLights(_that));

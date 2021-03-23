@@ -1,5 +1,7 @@
 #pragma once
 
+#include "Airplane.h"
+
 typedef struct Turbine* PTurbine;
 typedef struct Turbine** PTurbineArr;
 
@@ -9,9 +11,9 @@ PTurbineArr Turbine_createArr(int count);
 void Turbine_print(PTurbine _this);
 void Turbine_printArr(PTurbineArr _this, int count);
 
-void Turbine_calcValues(PTurbine _this);
+void Turbine_calcValues(PTurbine _this, PAirplane _that);
+void Turbine_calcValuesArr(PTurbineArr _this, PAirplane _that, int count);
 
-float Turbine_calcAirMassFlow(PTurbine _this);
-float Turbine_calcGasOutletVelocity(PTurbine _this);
-float Turbine_calcVelocity(PTurbine _this);
-float Turbine_calcAdvanceEfficiency(PTurbine _this);
+float Turbine_calcThrust(PTurbine _this, PAirplane _that);
+float Turbine_calcRPM(PTurbine _this, PAirplane _that);
+float Turbine_calcAirFlow(PTurbine _this, PAirplane _that);

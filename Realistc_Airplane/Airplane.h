@@ -7,8 +7,9 @@ typedef struct Config* PConfig;
 
 PAirplane Airplane_create();
 
-void Airplane_addThrust(PAirplane _this);
-void Airplane_removeThrust(PAirplane _this);
+void Airplane_addThrottle(PAirplane _this);
+void Airplane_removeThrottle(PAirplane _this);
+float Airplane_getThrottle(PAirplane _this);
 
 void Airplane_Debug_printAllData(PAirplane _this);
 
