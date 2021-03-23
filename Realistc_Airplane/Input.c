@@ -96,7 +96,7 @@ void Input_print(PInput _this) {
 void writeToFile(PInput _this) {
     FILE *fp = fopen(".\\hotkeys\\hotkeys.flightsim", "wb");
     if (!fp) {
-        printf("An error occured while allocation. (Opening file writing).");
+        printf("An error occurred while allocation. (Opening file writing).");
         return;
     }
     fwrite(_this, sizeof(struct Input), 1, fp);
