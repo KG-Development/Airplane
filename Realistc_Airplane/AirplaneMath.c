@@ -3,9 +3,9 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-float AirplaneMath_uplift(float airtight, float velocity, float cl, float span, float dynamicPressure){
+float AirplaneMath_uplift(float airtight, float velocity, float cl, float span, float dynamicPressure, float weight){
 
-    float upLift = 0.5 * airtight * (velocity * velocity) * cl * (dynamicPressure * dynamicPressure);
+    float upLift = (0.5 * airtight * velocity * cl * (dynamicPressure * dynamicPressure)) / weight;
 
     return upLift;
 }
