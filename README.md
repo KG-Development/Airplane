@@ -5,11 +5,11 @@ as the project just started, there are currently only debug informations and sim
 
 currently:
 
-Input is working with an input flow (the program doesn't wait till the user gives an input)\n
-Wind resistance is working as an ADT
-Acceleration is working
-Creating an Airplane config works
-Printing out all the debug information works
-The turbines are working (mostly) correctly
-it prints a ASCII - Cockpit
+Input is working with an input flow (the program doesn't wait till the user gives an input), 
+Wind resistance is working as an ADT, 
+Acceleration is working, 
+Creating an Airplane config works, 
+Printing out all the debug information works, 
+The turbines are working (mostly) correctly, 
+it prints a ASCII - Cockpit, 
 
