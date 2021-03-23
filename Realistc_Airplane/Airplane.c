@@ -9,11 +9,9 @@
 #include "Luftwiderstand.h"
 #include "Light.h"
 #include "Input.h"
-<<<<<<< Updated upstream
 #include "AirplaneMath.h"
-=======
 #include "Beschleunigung.h"
->>>>>>> Stashed changes
+
 
 typedef int boolean;
 
