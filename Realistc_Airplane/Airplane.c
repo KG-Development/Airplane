@@ -11,6 +11,7 @@
 #include "Input.h"
 #include "AirplaneMath.h"
 #include "Beschleunigung.h"
+#include "Velocity.h"
 
 
 typedef int boolean;
@@ -89,7 +90,8 @@ void Airplane_Debug_printAllData(PAirplane _this) {
     Luftwiderstand_print(_this->widerstand);
     Input_print(_this->input);
     Acceleration_print(_this->acceleration);
-    printf("Throttle: %.2f \n", _this->throttle);
+    printf("Throttle: %.2f\n", _this->throttle);
+    printf("\nVelocity: %.2f km/h\n", Velocity_getVelocity(0, _this, 60, Acceleration_getter(_this->acceleration)));
     printf("Flaps calc: %.2f\n", AirplaneMath_culcFlaps(Wings_getFlaps(Airplane_getWing(_this, 0))));
     printf("\nUplift %.2f m/s", AirplaneMath_uplift(AirResuspension_getAirtight(_this->widerstand), 250, AirplaneMath_liftCoefficient(0), Config_getSpan(_this->conf), AirplaneMath_culcDynamicPressure(AirResuspension_getAirtight(_this->widerstand), AirResuspension_getAirvelocity(_this->widerstand)), Config_getWeight(_this->conf)));
 }
