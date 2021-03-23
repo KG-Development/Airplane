@@ -79,7 +79,7 @@ void Airplane_Debug_printAllData(PAirplane _this) {
     Lights_print(_this->lights);
     Luftwiderstand_print(_this->widerstand);
     Input_print(_this->input);
-    printf("Throttle: %.2f %\n", _this->throttle);
+    printf("Throttle: %.2f \n", _this->throttle);
 }
 
 void Airplane_update(PAirplane _this) {
