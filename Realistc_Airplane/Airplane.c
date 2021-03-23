@@ -82,7 +82,7 @@ void Airplane_Debug_printAllData(PAirplane _this) {
     Input_print(_this->input);
     printf("Throttle: %.2f \n", _this->throttle);
 
-    printf("\n%.2f", AirplaneMath_uplift(AirResuspension_getAirtight(_this->widerstand), 230, AirplaneMath_liftCoefficient(0), Config_getSpan(_this->conf), AirplaneMath_culcDynamicPressure(AirResuspension_getAirtight(_this->widerstand), AirResuspension_getAirvelocity(_this->widerstand))));
+    printf("\n%f", AirplaneMath_uplift(AirResuspension_getAirtight(_this->widerstand), 1, AirplaneMath_liftCoefficient(0), Config_getSpan(_this->conf), AirplaneMath_culcDynamicPressure(AirResuspension_getAirtight(_this->widerstand), AirResuspension_getAirvelocity(_this->widerstand))));
 }
 
 void Airplane_update(PAirplane _this) {
