@@ -2,11 +2,12 @@
 #include "Airplane.h"
 #include "Light.h"
 #include "AirplaneConfig.h"
+#include "Wings.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <conio.h>
 
-#define NUM_OF_HOTKEYS 9
+#define NUM_OF_HOTKEYS 11
 
 struct Input {
     char choice;
@@ -20,6 +21,8 @@ struct Input {
     char landingLightsSwitch;
     char cockpitLightSwitch;
     char gears;
+    char addFlaps;
+    char removeFlaps;
 };
 
 PInput Input_createInstance() {
@@ -35,6 +38,8 @@ PInput Input_createInstance() {
         in->landingLightsSwitch = '4';
         in->cockpitLightSwitch = '5';
         in->gears = 'g';
+        in->addFlaps = ',';
+        in->removeFlaps = '.';
         writeToFile(in);
     }else {
         printf("Error occurred while allocation. (Input)\n");
@@ -75,12 +80,19 @@ void Input_callFunctionNeeded(PInput _this, PAirplane _that) {
 
     }else if (_this->choice == readFromIndexFile(9, filename)) {
         Config_switchGears(Airplane_getConfig(_that));
+    }else if (_this->choice == readFromIndexFile(10, filename)){
+        Wings_addFlapsArr(Airplane_getWingArr(_that), Config_getWingsCount(Airplane_getConfig(_that)));
+
+    }else if (_this->choice == readFromIndexFile(11, filename)){
+        Wings_removeFlapsArr(Airplane_getWingArr(_that), Config_getWingsCount(Airplane_getConfig(_that)));
+
     }else if (_this->choice == '0'){
 
 
     }else {
         printf("Error. Or wrong input.(Input) choice: %c\n", _this->choice);
     }
+    _this->choice = '0';
 }
 
 char Input_getter(PInput _this) {

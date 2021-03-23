@@ -18,3 +18,20 @@ float AirplaneMath_culcDynamicPressure(float airtight, float flowVelocity){
 
     return (airtight / 2.0) * flowVelocity;
 }
+float AirplaneMath_culcFlaps(int state){
+
+    switch(state){
+    case 0:
+        return 0;
+    case 1:
+        return 0.35;
+    case 2:
+        return 0.57;
+    case 3:
+        return 0.71;
+    case 4:
+        return 1;
+    default: printf("Not a Valid state for Flaps");
+    }
+    return -1;
+}

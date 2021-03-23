@@ -90,11 +90,12 @@ void Airplane_Debug_printAllData(PAirplane _this) {
     Input_print(_this->input);
     Acceleration_print(_this->acceleration);
     printf("Throttle: %.2f \n", _this->throttle);
-
+    printf("Flaps calc: %.2f\n", AirplaneMath_culcFlaps(Wings_getFlaps(Airplane_getWing(_this, 0))));
     printf("\nUplift %.2f m/s", AirplaneMath_uplift(AirResuspension_getAirtight(_this->widerstand), 250, AirplaneMath_liftCoefficient(0), Config_getSpan(_this->conf), AirplaneMath_culcDynamicPressure(AirResuspension_getAirtight(_this->widerstand), AirResuspension_getAirvelocity(_this->widerstand)), Config_getWeight(_this->conf)));
 }
 
 void Airplane_update(PAirplane _this) {
+    for(int i = 0; i < 1000; i++)
     Input_callFunctionNeeded(_this->input, _this);
     Turbine_calcValuesArr(_this->turbineArr, _this, Config_getTurbineCount(_this->conf));
     float acc = Acceleration_getCurrentAcceleration(_this->acceleration, _this, getThrustCombined(_this, Config_getTurbineCount(_this->conf)));
@@ -118,4 +119,13 @@ PConfig Airplane_getConfig(PAirplane _this){
 
 float Airplane_getThrottle(PAirplane _this) {
     return (_this->throttle);
+}
+PWing Airplane_getWing(PAirplane _this, int index){
+
+    if(index > Config_getWingsCount(_this->conf)) exit(EXIT_FAILURE);
+
+    return _this->wingArr[index];
+}
+PWingArr Airplane_getWingArr(PAirplane _this){
+    return _this->wingArr;
 }
