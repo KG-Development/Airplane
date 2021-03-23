@@ -252,7 +252,7 @@
 
 1616400481 c:\users\user\documents\github\airplane\realistc_airplane\light.h
 
-1616497055 source:c:\users\kilia\documents\github\airplane\realistc_airplane\airplane.c
+1616512281 source:c:\users\kilia\documents\github\airplane\realistc_airplane\airplane.c
 	<stdio.h>
 	<stdlib.h>
 	"Airplane.h"
@@ -264,12 +264,13 @@
 	"Luftwiderstand.h"
 	"Light.h"
 	"Input.h"
+	"Beschleunigung.h"
 
-1616493651 c:\users\kilia\documents\github\airplane\realistc_airplane\airplane.h
+1616509865 c:\users\kilia\documents\github\airplane\realistc_airplane\airplane.h
 
-1616493636 c:\users\kilia\documents\github\airplane\realistc_airplane\airplaneconfig.h
+1616509865 c:\users\kilia\documents\github\airplane\realistc_airplane\airplaneconfig.h
 
-1616495855 c:\users\kilia\documents\github\airplane\realistc_airplane\turbine.h
+1616510414 c:\users\kilia\documents\github\airplane\realistc_airplane\turbine.h
 	"Airplane.h"
 
 1616252840 c:\users\kilia\documents\github\airplane\realistc_airplane\gears.h
@@ -285,7 +286,7 @@
 	"Wings.h"
 	"Rudder.h"
 
-1616493607 source:c:\users\kilia\documents\github\airplane\realistc_airplane\airplaneconfig.c
+1616510131 source:c:\users\kilia\documents\github\airplane\realistc_airplane\airplaneconfig.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -307,12 +308,12 @@
 	<stdlib.h>
 	"Gears.h"
 
-1616496988 source:c:\users\kilia\documents\github\airplane\realistc_airplane\luftwiderstand.c
+1616510080 source:c:\users\kilia\documents\github\airplane\realistc_airplane\luftwiderstand.c
 	<stdio.h>
 	<stdlib.h>
 	"Luftwiderstand.h"
 
-1616485226 source:c:\users\kilia\documents\github\airplane\realistc_airplane\main.c
+1616512852 source:c:\users\kilia\documents\github\airplane\realistc_airplane\main.c
 	<stdio.h>
 	<stdlib.h>
 	"Airplane.h"
@@ -328,13 +329,14 @@
 	"Menu.h"
 	"myconio.h"
 	"RenderEngine.h"
+	"Beschleunigung.h"
 
 1616252840 source:c:\users\kilia\documents\github\airplane\realistc_airplane\rudder.c
 	<stdio.h>
 	<stdlib.h>
 	"Rudder.h"
 
-1616495978 source:c:\users\kilia\documents\github\airplane\realistc_airplane\turbine.c
+1616510414 source:c:\users\kilia\documents\github\airplane\realistc_airplane\turbine.c
 	<stdio.h>
 	<stdlib.h>
 	"Turbine.h"
@@ -346,7 +348,7 @@
 
 1616437875 c:\users\kilia\documents\github\airplane\realistc_airplane\input.h
 
-1616498028 source:c:\users\kilia\documents\github\airplane\realistc_airplane\input.c
+1616508862 source:c:\users\kilia\documents\github\airplane\realistc_airplane\input.c
 	"Input.h"
 	"Airplane.h"
 	"Light.h"
@@ -552,6 +554,7 @@
 	<string.h>
 	<conio.h>
 
+<<<<<<< Updated upstream
 1616510465 source:c:\users\strobl\documents\github\airplane\realistc_airplane\airplanemath.c
 	<math.h>
 	"AirplaneMath.h"
@@ -559,4 +562,15 @@
 	<stdlib.h>
 
 1616509882 c:\users\strobl\documents\github\airplane\realistc_airplane\airplanemath.h
+=======
+1616512487 source:c:\users\kilia\documents\github\airplane\realistc_airplane\beschleunigung.c
+	<stdio.h>
+	<stdlib.h>
+	"Beschleunigung.h"
+	"AirplaneConfig.h"
+
+1616512281 c:\users\kilia\documents\github\airplane\realistc_airplane\beschleunigung.h
+	"Airplane.h"
+	"Turbine.h"
+>>>>>>> Stashed changes
 

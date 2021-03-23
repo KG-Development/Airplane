@@ -37,7 +37,7 @@ PInput Input_createInstance() {
         in->gears = 'g';
         writeToFile(in);
     }else {
-        printf("Error occured while allocation. (Input)\n");
+        printf("Error occurred while allocation. (Input)\n");
         return NULL;
     }
     return in;
@@ -58,22 +58,22 @@ void Input_callFunctionNeeded(PInput _this, PAirplane _that) {
     }else if (_this->choice == readFromIndexFile(3, filename)) {
         Airplane_removeThrottle(_that);
 
-    }else if(_this->choice == readFromIndexFile(4, filename)){
+    }else if(_this->choice == readFromIndexFile(4, filename)) {
         Lights_switchTaxiLights(Airplane_getLights(_that));
 
-    }else if(_this->choice == readFromIndexFile(5, filename)){
+    }else if(_this->choice == readFromIndexFile(5, filename)) {
         Lights_switchNavLights(Airplane_getLights(_that));
 
-    }else if(_this->choice == readFromIndexFile(6, filename)){
+    }else if(_this->choice == readFromIndexFile(6, filename)) {
         Lights_switchBlinkLights(Airplane_getLights(_that));
 
-    }else if(_this->choice == readFromIndexFile(7, filename)){
+    }else if(_this->choice == readFromIndexFile(7, filename)) {
         Lights_switchLandinLights(Airplane_getLights(_that));
 
-    }else if(_this->choice == readFromIndexFile(8, filename)){
+    }else if(_this->choice == readFromIndexFile(8, filename)) {
         Lights_switchCockpitLights(Airplane_getLights(_that));
 
-    }else if (_this->choice == readFromIndexFile(9, filename)){
+    }else if (_this->choice == readFromIndexFile(9, filename)) {
         Config_switchGears(Airplane_getConfig(_that));
     }else if (_this->choice == '0'){
 

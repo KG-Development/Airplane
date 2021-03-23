@@ -108,3 +108,7 @@ float Turbine_calcAirFlow(PTurbine _this, PAirplane _that) {
     }
     return _this->airFlowPerSecond = _this->airFlowPerSecond * Airplane_getThrottle(_that);
 }
+
+float Turbine_getThrust(PTurbine _this) {
+    return _this->thrust;
+}

@@ -9,9 +9,15 @@
 #include "Luftwiderstand.h"
 #include "Light.h"
 #include "Input.h"
+<<<<<<< Updated upstream
 #include "AirplaneMath.h"
+=======
+#include "Beschleunigung.h"
+>>>>>>> Stashed changes
 
 typedef int boolean;
+
+float getThrustCombined(PAirplane _this, int count);
 
 struct Airplane {
     PConfig conf;
@@ -23,6 +29,7 @@ struct Airplane {
     PLuftwiderstand widerstand;
     PLights lights;
     PInput input;
+    PAcceleration acceleration;
 
     float velocity; //KN
     float throttle;
@@ -47,9 +54,12 @@ PAirplane Airplane_create(PConfig conf) {
     retVal->rudderArr = Rudder_createArr(Config_getRudderCount(retVal->conf));
     retVal->widerstand = Luftwiderstand_berechneKraft(Config_getCWValue(retVal->conf));
     retVal->lights = Lights_create();
-    retVal->throttle = 0;
+    retVal->throttle = 100;
     retVal->velocity = 0;
     retVal->input = Input_createInstance();
+    retVal->acceleration = Acceleration_createInstance();
+
+    Acceleration_createInitialValue(retVal->acceleration);
 
     return retVal;
 }
@@ -80,6 +90,7 @@ void Airplane_Debug_printAllData(PAirplane _this) {
     Lights_print(_this->lights);
     Luftwiderstand_print(_this->widerstand);
     Input_print(_this->input);
+    Acceleration_print(_this->acceleration);
     printf("Throttle: %.2f \n", _this->throttle);
 
     printf("\n%.2f", AirplaneMath_uplift(AirResuspension_getAirtight(_this->widerstand), 230, AirplaneMath_liftCoefficient(0), Config_getSpan(_this->conf), AirplaneMath_culcDynamicPressure(AirResuspension_getAirtight(_this->widerstand), AirResuspension_getAirvelocity(_this->widerstand))));
@@ -88,6 +99,16 @@ void Airplane_Debug_printAllData(PAirplane _this) {
 void Airplane_update(PAirplane _this) {
     Input_callFunctionNeeded(_this->input, _this);
     Turbine_calcValuesArr(_this->turbineArr, _this, Config_getTurbineCount(_this->conf));
+    float acc = Acceleration_getCurrentAcceleration(_this->acceleration, _this, getThrustCombined(_this, Config_getTurbineCount(_this->conf)));
+    Acceleration_setter(_this->acceleration, acc);
+}
+
+float getThrustCombined(PAirplane _this, int count) {
+    float th = 0;
+    for (int i = 0; i < count; i++) {
+        th = th + Turbine_getThrust(_this->turbineArr[i]);
+    }
+    return th;
 }
 
 PLights Airplane_getLights(PAirplane _this){
