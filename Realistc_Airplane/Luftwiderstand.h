@@ -6,6 +6,8 @@
 #include "Wings.h"
 #include "Rudder.h"
 
+#define Current_Air_Velocity 15
+
 typedef struct Luftwiderstand *PLuftwiderstand;
 
 PLuftwiderstand Luftwiderstand_berechneKraft(float cw);

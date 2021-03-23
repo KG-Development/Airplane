@@ -20,7 +20,7 @@ struct Luftwiderstand {
 void Luftwiderstand_set(PLuftwiderstand _this) {
     _this->gl = 1.2041;
     _this->A = 35.8;
-    _this->v2RL = 15 * 15;
+    _this->v2RL = Current_Air_Velocity * Current_Air_Velocity;  //luftgeschwindigkeit variabel, je nach standort u. Ä.
 }
 
 PLuftwiderstand Luftwiderstand_berechneKraft(float cw) {

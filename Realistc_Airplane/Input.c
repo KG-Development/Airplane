@@ -51,7 +51,7 @@ void Input_UserInput(PInput _this) {
 
 void Input_callFunctionNeeded(PInput _this, PAirplane _that) {
     Input_UserInput(_this);
-    const char* filename = "hotkeys.flightsim";
+    const char* filename = ".\\hotkeys\\hotkeys.flightsim";
 
     if (_this->choice == readFromIndexFile(2, filename)) {
         Airplane_addThrottle(_that);
@@ -94,7 +94,7 @@ void Input_print(PInput _this) {
 }
 
 void writeToFile(PInput _this) {
-    FILE *fp = fopen("hotkeys.flightsim", "wb");
+    FILE *fp = fopen(".\\hotkeys\\hotkeys.flightsim", "wb");
     if (!fp) {
         printf("An error occured while allocation. (Opening file writing).");
         return;

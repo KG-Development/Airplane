@@ -46,7 +46,7 @@ PAirplane Airplane_create(PConfig conf) {
     retVal->rudderArr = Rudder_createArr(Config_getRudderCount(retVal->conf));
     retVal->widerstand = Luftwiderstand_berechneKraft(Config_getCWValue(retVal->conf));
     retVal->lights = Lights_create();
-    retVal->throttle = 1;
+    retVal->throttle = 0;
     retVal->velocity = 0;
     retVal->input = Input_createInstance();
 
@@ -79,7 +79,7 @@ void Airplane_Debug_printAllData(PAirplane _this) {
     Lights_print(_this->lights);
     Luftwiderstand_print(_this->widerstand);
     Input_print(_this->input);
-    printf("Throttle: %.2f%\n", _this->throttle);
+    printf("Throttle: %.2f %\n", _this->throttle);
 }
 
 void Airplane_update(PAirplane _this) {
