@@ -5,7 +5,7 @@ as the project just started, there are currently only debug informations and sim
 
 currently:
 
-Input is working with an input flow (the program doesn't wait till the user gives an input)
+Input is working with an input flow (the program doesn't wait till the user gives an input)\n
 Wind resistance is working as an ADT
 Acceleration is working
 Creating an Airplane config works
