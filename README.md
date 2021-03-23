@@ -12,4 +12,5 @@ Creating an Airplane config works,
 Printing out all the debug information works, 
 The turbines are working (mostly) correctly, 
 it prints a ASCII - Cockpit, 
-
+Velocity is working
+Uplift is working
