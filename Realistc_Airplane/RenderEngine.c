@@ -1,5 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <windows.h>
+#include <time.h>
+#include "myconio.h"
 #include "RenderEngine.h"
 
 #define MAX_X 29
@@ -9,6 +12,7 @@ struct RenderEngine{
 
     char field[MAX_Y][MAX_X];
 };
+
 
 PRenderEngine RenderEngine_create() {
     PRenderEngine retVal = (PRenderEngine) malloc(sizeof(struct RenderEngine));
@@ -46,5 +50,23 @@ void RenderEngine_print(PRenderEngine _this) {
         for(int x = 0; x < MAX_X; x++) {
             putchar(_this->field[y][x]);
         }
+    }
+}
+
+void StartRampPrototype(PRenderEngine _this){
+
+    for(int f = 0; f < 20; f++){
+
+        int count = 0;
+        for(int i = MAX_Y; i >= 0; i--){
+            gotoxy(count += 2 + f, i);
+            printf("/");
+        }
+        count = MAX_X;
+        for(int i = MAX_Y; i >= 0; i--){
+            gotoxy(count -= 2 + f, i);
+            printf("\\");
+        }
+        Sleep(1000);
     }
 }
