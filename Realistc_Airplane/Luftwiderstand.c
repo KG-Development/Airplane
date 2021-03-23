@@ -9,7 +9,6 @@
 //A = Querschnittsfläche Fahrzeug
 
 struct Luftwiderstand {
-    float cw;
     float v2RL;
     float gl;
     float A;

@@ -111,3 +111,7 @@ void Config_switchGears(PConfig _this){
         break;
     }
 }
+
+float Config_getWeight(PConfig _this) {
+    return (_this->weight * 1000);
+}

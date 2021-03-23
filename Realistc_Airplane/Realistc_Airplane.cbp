@@ -39,6 +39,10 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="AirplaneConfig.h" />
+		<Unit filename="Beschleunigung.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="Beschleunigung.h" />
 		<Unit filename="Fuel.c">
 			<Option compilerVar="CC" />
 		</Unit>
